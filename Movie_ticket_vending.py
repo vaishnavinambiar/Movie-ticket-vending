@@ -58,7 +58,7 @@ def getMovie_booked():
 
 def getOption_to_select():
     """Giving options for users to view movie list"""
-    option = raw_input(" 1. Show all running movies\n 2. Show movies in particular theatre\n 3. Show all details of show in all theatres ")
+    option = raw_input("Check more options:\n 1. Show all running movies\n 2. Show movies in particular theatre\n 3. Show all details of show in all theatres ")
     if option == str('1'):
         return movies
     elif option == str('2'):
