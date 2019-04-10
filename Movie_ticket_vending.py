@@ -15,6 +15,7 @@ ticket_type= {'I': 'Rs 250', 'II': 'Rs 150', 'III': 'Rs 75'}
 user_option= raw_input("select a movie: ")
 
 def getDetails(user_option):
+    
     """Getting details of theatre, show time and seat available when user selects a movie"""
     return "theatre, seats and show time are:",theatre_showtime_movie[user_option]['theatre'],theatre_showtime_movie[user_option]['seats'],theatre_showtime_movie[user_option]['time']
 
@@ -47,8 +48,28 @@ def getPayed():
         elif payment_options == str('2'):
             raw_input ("Enter Customer ID & password")
             return "Yay! payment successfull"
-    else:
-        return "Cancelled"
+
+def rebooking():
+  """To rebook or not"""
+    rebook = raw_input("Do you want to rebook Y or N? ")
+    if rebook == str('y'):
+        print getSeattype()
+        leftover_seats = balance_seats_after_booking[0] -1
+        balance_seats_after_booking.append(leftover_seats)
+        return leftover_seats 
+        print getPayed()
+        
+    elif rebook == str('n'):
+        return "Thankyou! Enjoy your movies"
+        sys.exit()
+        
+        
+def getAllmovies():
+  """ To list out all movies"""
+    raw_input("To see all trending movies press Enter")
+    return movies
+    
+    
                                
 
 with open('Movie_vending_machine.csv', mode='w') as moviename_file:        #writing  csv file
@@ -69,3 +90,5 @@ if __name__ == "__main__":                   #main program
     print getSeattype()
     print getBooked()
     print getPayed()
+    print rebooking()
+    print getAllmovies()
