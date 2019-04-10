@@ -68,7 +68,12 @@ def getAllmovies():
   """ To list out all movies"""
     raw_input("To see all trending movies press Enter")
     return movies
-    
+
+  
+def Movies_particular_theatre():
+  """To see movies in particular theatre"""
+    user_need_theatre = raw_input("Which theatre movies you want to see?")
+    return movies_in_particular_theatre[user_need_theatre]['movies']   
     
                                
 
@@ -92,3 +97,4 @@ if __name__ == "__main__":                   #main program
     print getPayed()
     print rebooking()
     print getAllmovies()
+    print Movies_particular_theatre()
