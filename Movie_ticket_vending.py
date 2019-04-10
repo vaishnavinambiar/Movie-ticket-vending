@@ -3,6 +3,8 @@ import sys
 import csv
 
 movies = ['Captain Marvel', 'Airaa', 'Lucifer', 'Thadam', 'Super delux','Joseph']
+movies_in_particular_theatre = {'mudra':{'movies': 'Captain Marvel Airaa Lucifer'},
+                                'keerthi':{'movies': 'Thadam  Super delux Joseph'}}
 theatre_showtime_movie = {'Captain Marvel':{'theatre':'mudra', 'seats': 50, 'time':'9.30AM'},
                           'Airaa':{'theatre':'mudra', 'seats': 50, 'time':'1.30PM'},
                           'Lucifer':{'theatre':'mudra', 'seats': 50, 'time':'6.00PM'},
