@@ -76,7 +76,12 @@ def Movies_particular_theatre():
   """To see movies in particular theatre"""
     user_need_theatre = raw_input("Which theatre movies you want to see?")
     return movies_in_particular_theatre[user_need_theatre]['movies']   
-    
+ 
+
+def getTheatre_showtime():
+    """ To list theater with show, given a movie name"""
+    user_choice = raw_input("Give a movie name ")
+    return theatre_showtime_movie[user_choice]['theatre'], theatre_showtime_movie[user_choice]['time']
                                
 
 with open('Movie_vending_machine.csv', mode='w') as moviename_file:        #writing  csv file
@@ -100,3 +105,4 @@ if __name__ == "__main__":                   #main program
     print rebooking()
     print getAllmovies()
     print Movies_particular_theatre()
+    print getTheatre_showtime()
