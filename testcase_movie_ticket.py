@@ -1,5 +1,5 @@
 import unittest
-from  Movie_ticket_vending import *
+from Movie_ticket_vending import *
 
 class MovieTicketVending(unittest.TestCase):
 
@@ -35,6 +35,22 @@ class MovieTicketVending(unittest.TestCase):
         leaftover_seats = theatre_showtime_movie[user_option]['seats'] -1
         self.assertEqual(theatre_showtime_movie[user_option]['seats'] -1, 24)
 
-    
+    def test_one_movies_in_particular_theatre(self):
+        user_need_theatre = 'mudra'
+        self.assertEqual(movies_in_particular_theatre[user_need_theatre]['movies'], 'Captain Marvel Airaa Lucifer')
+
+    def test_two_movies_in_particular_theatre(self):
+        user_need_theatre = 'keerthi'
+        self.assertNotEqual(movies_in_particular_theatre[user_need_theatre]['movies'], 'Thadam  Super delux Joseph')
+        
+    def test_one_theatre_showtime(self):
+        user_choice = 'Lucifer'
+        self.assertTrue(('mudra', '6.00PM'), True)
+
+    def test_two_theatre_showtime(self):
+        user_choice = 'Captain Marvel'
+        self.assertFalse(('mudra', '9.30AM'), False)
+
+
 if __name__== '__main__':
     unittest.main()
